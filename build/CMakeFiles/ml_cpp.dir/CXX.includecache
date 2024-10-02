@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/NN.hpp
+iostream
+-
+vector
+-
+memory
+-
+cmath
+-
+random
+-
+layer.hpp
+../include/layer.hpp
+
+../include/fully_connected_layer.hpp
+layer.hpp
+../include/layer.hpp
+
+../include/layer.hpp
+iostream
+-
+vector
+-
+
+/home/ismail/ml-cpp/src/main.cpp
+iostream
+-
+NN.hpp
+/home/ismail/ml-cpp/src/NN.hpp
+fully_connected_layer.hpp
+/home/ismail/ml-cpp/src/fully_connected_layer.hpp
+
