@@ -13,7 +13,6 @@ void NN::init_weights(){
     std::mt19937 gen(rd()); // Random number generator
 
     for (const auto& layer : this->layers) {
-        std::cout << "LAYER\n";
         // Calculate the Xavier initialization limit based on layer sizes
         float limit = sqrt(6.0f / (layer->input_size + layer->output_size));
         std::uniform_real_distribution<> dis(-limit, limit); // Range [-limit, limit]
