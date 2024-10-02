@@ -5,8 +5,8 @@
 int main() {
     NN net(0.01f);
     
-    net.add_layer(new fully_connected_layer(2,4));
-    net.add_layer(new fully_connected_layer(4,1));
+    net.add_layer(std::make_unique<fully_connected_layer>(2,4));
+    net.add_layer(std::make_unique<fully_connected_layer>(4,1));
 
     net.init_weights();
 

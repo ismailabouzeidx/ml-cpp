@@ -13,7 +13,7 @@ class NN{
         NN(float lr);
         ~NN();
         
-        void add_layer(layer* layer);
+        void add_layer(std::unique_ptr<layer> layer);
         void forward(std::vector<float> &input);
         void init_weights();
         void print_neurons();
@@ -21,5 +21,5 @@ class NN{
     private:
         float learning_rate;
 
-        std::vector<layer*> layers;
+        std::vector<std::unique_ptr<layer>> layers;
 };
