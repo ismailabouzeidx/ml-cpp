@@ -2,13 +2,14 @@
 
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 class layer{
     
     public:
         layer();
         
-        virtual void forward(std::vector<float> &input) = 0;
+        virtual std::vector<float> forward(std::vector<float> &input) = 0;
     
     public:
         std::vector<std::vector<float>> weights;

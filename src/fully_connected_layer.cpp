@@ -10,13 +10,13 @@ fully_connected_layer::fully_connected_layer(int input, int output){
     this->weights = std::vector<std::vector<float>>(this->output_size,std::vector<float>(this->input_size));
 }
 
-void fully_connected_layer::forward(std::vector<float> &input){
+std::vector<float> fully_connected_layer::forward(std::vector<float> &input){
 
-    for (int i =0 ; i< this->output_size; i++){
+    for (int i =0 ; i < this->output_size; i++){
         this->neurons[i] = 0.0f;
         for (int j =0 ; j < this->input_size; j++) {
-
             this->neurons[i] += input[j] * this->weights[i][j];
         }
     }
+    return this->neurons;
 }

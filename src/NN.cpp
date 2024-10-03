@@ -3,7 +3,9 @@
 NN::NN(float lr){
     this->learning_rate = lr;
 }
+
 NN::~NN(){}
+
 void NN::add_layer(std::unique_ptr<layer> layer){
     this->layers.emplace_back(std::move(layer));
 }
@@ -33,9 +35,38 @@ void NN::print_neurons(){
         }
     }
 }
-void NN::forward(std::vector<float> &input){
-    for (const auto &layer : this->layers){
-        layer->forward(input);
 
+std::vector<float> NN::forward(std::vector<float> &input){
+    std::vector<float> current_input = input;
+    for (const auto &layer : this->layers){
+        current_input = layer->forward(current_input);
+    }
+    return current_input;
+}
+
+
+
+void NN::train(std::vector<float> &input, std::vector<float> &target, int epochs) {
+    this->init_weights();
+    
+    // Step 2: Training loop for specified epochs
+    for (int epoch = 0; epoch < epochs; ++epoch) {
+        std::cout << "Epoch " << epoch + 1 << "/" << epochs << "\n";
+
+        this->forward(input);
+
+        float loss = mse_loss(target, this->layers.back()->neurons);  // Output of the last layer is the prediction
+        std::cout << "Epoch: " << epoch << ", Loss: " << loss << "\n";
+
+        // Print loss to monitor progress
     }
 }
+
+std::vector<float> NN::predict(std::vector<float> &input) {
+    // Perform forward pass
+    this->forward(input);
+    
+    // Return the output from the last layer (predicted values)
+    return this->layers.back()->neurons;
+}
+
