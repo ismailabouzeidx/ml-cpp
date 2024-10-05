@@ -21,5 +21,5 @@ class layer{
         int input_size;
         int output_size;
 
-        float learning_rate = 0.01f;
+        float learning_rate;
 };
