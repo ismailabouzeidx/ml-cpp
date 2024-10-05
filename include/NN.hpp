@@ -19,8 +19,9 @@ class NN{
         void init_weights();
         
         std::vector<float> forward(std::vector<float> &input);
-        
-        void train(std::vector<float> &input, std::vector<float> &output, int epochs);
+        void backward(std::vector<float> &target);
+
+        void train(std::vector<std::vector<float>> &inputs, std::vector<std::vector<float>> &targets, int epochs);
         
         std::vector<float> predict(std::vector<float> &input);
 
