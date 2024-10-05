@@ -5,7 +5,7 @@
 
 int main() {
     // Create a neural network with learning rate 0.01
-    NN net(0.01f);
+    NN net(0.1f);
 
     // Add layers to the network
     net.add_layer(std::make_unique<fully_connected_layer>(2, 4));  // Fully connected input layer (2 input, 4 output neurons)
@@ -27,8 +27,8 @@ int main() {
         {0.0}
     };
 
-    // Train the network for 1000 epochs
-    int epochs = 1000000;
+    // Train the network for 30000 epochs
+    int epochs = 30000;
     net.train(inputs, targets, epochs);
 
     // Test the network after training
