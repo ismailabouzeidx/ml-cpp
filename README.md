@@ -22,31 +22,6 @@
 - **Prediction**:
   - Capability to make predictions after training the model on provided datasets.
 
-## Upcoming Features
-
-- **Shared Libs**:
-  - Implement support for building shared libraries to allow users to link the library dynamically with their applications. This will help reduce memory usage and enable easier updates to the library without recompiling dependent applications.
-
-- **Additional Activation Functions**:
-  - Implement more activation functions like ReLU, Leaky ReLU, and Softmax to enhance model performance.
-
-- **Convolutional Neural Networks (CNN)**:
-  - Support for convolutional layers to facilitate image processing and computer vision tasks.
-
-- **Optimization Algorithms**:
-  - Incorporate advanced optimization techniques such as Adam, RMSprop, and SGD with momentum.
-
-- **Regularization Techniques**:
-  - Implement dropout and L2 regularization to prevent overfitting during training.
-
-- **Data Preprocessing**:
-  - Functions for normalizing and preprocessing datasets before feeding them into the model.
-
-- **Model Saving and Loading**:
-  - Functionality to save trained models to disk and load them back for inference.
-
-- **Unit Tests**:
-  - A suite of unit tests to ensure the correctness and reliability of the implemented algorithms.
 
 ## Installation
 
